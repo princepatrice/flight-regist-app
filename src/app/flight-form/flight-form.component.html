@@ -1,0 +1,112 @@
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+
+
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                    Register you Flight Ticket in <span style="color: hsl(218, 81%, 75%)">2 minutes</span>
+                </h1>
+                <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                    We are proud of the destinations, partners and team members that work tirelessly
+                    to help make your vacation experience the best yet. Please spend some time browsing
+                    through our different destinations and find the perfect one for you! Vacation soon!
+                </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                <div class="card bg-glass">
+                    <div class="card-body px-2 py-5 px-md-5">
+                        <div *ngIf="operationStatus==2" class="alert alert-danger">
+                            An Error occured during the process,Please try again. If it persists please contac us on contact@error.monster
+                        </div>
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="operationStatus!=1">
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="airline">Airline <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" id="airline" class="form-control" formControlName="airline"
+                                    required />
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="arrivalDate">Arival Date <span
+                                                class="text-danger">*</span></label>
+                                        <input type="date" id="arrivalDate" class="form-control"
+                                            formControlName="arrivalDate" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="arrivalTime">Arrival Time<span
+                                                class="text-danger">*</span></label>
+                                        <input type="time" id="arrivalTime" class="form-control"
+                                            formControlName="arrivalTime" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="flighNumber">Flight Number <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" id="flighNumber" class="form-control" formControlName="flightNumber"
+                                    required />
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="airline">Number of Guests <span
+                                        class="text-danger">*</span></label>
+                                <input type="number" id="numOfGuests" class="form-control" formControlName="numOfGuests"
+                                    required min="1" value="1" />
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <textarea rows="2" style="resize: none;"
+                                    placeholder=" please add any specifique , you want us to know"
+                                    formControlName="comments" class="form-control"></textarea>
+                            </div>
+
+
+                            <!-- Submit button -->
+
+                            <button *ngIf="!loading" class="btn btn-primary btn-block" style="width:100%;"
+                                [disabled]="!form.valid">
+                                Add Ticket
+                            </button>
+                            <button *ngIf="loading" class="btn btn-primary btn-block" style="width:100%;"
+                                [disabled]="true">
+                                <div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+
+
+
+
+
+
+                        </form>
+                        <div *ngIf="operationStatus==1">
+                            <div>
+                                <h4 class="text-center">Congratulation You are all set. Enjoy your trip</h4>
+                                <p class="text-center">We have are thrilled to have you.</p>
+                            </div>
+                            <div class="container d-flex align-items-center justify-content-center">
+                                <img src="https://media3.giphy.com/media/bT4jGHigkXgNdGi6rb/giphy.gif?cid=6c09b952zbuoq50336jp3iyeeq9t7war7q098pdc3nw645vr&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s"
+                                    alt="Your Image" class="" height="250px">
+                            </div>
+
+                            <div class="my-2">
+                                <button class="btn btn-primary btn-block" (click)="addFlight()" style="width:100%;">Add
+                                    Another Flight?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section: Design Block -->

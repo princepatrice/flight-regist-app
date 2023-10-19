@@ -1,0 +1,68 @@
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start mt-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                    With <span style="color: hsl(218, 81%, 75%)">Monster Reservation</span>,
+                     Register your flights with ease and Discover the world with us! <br />
+                </h1>
+
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                <div class="card bg-glass">
+                    <div class="container d-flex align-items-center justify-content-center" style="height: 10px">
+                        <img src="https://monsterrg.com/wp-content/uploads/2021/08/MonsterLogo-secondary.png"
+                            alt="Your Image" class="img-fluid">
+                    </div>
+                    <div class="card-body px-4 py-5 px-md-5">
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="email">Email address</label>
+                                <input type="email" id="email" formControlName="email" class="form-control" required/>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="password">Password</label>
+                                <input type="password" id="password" formControlName="password" class="form-control" required/>
+                            </div>
+                            <div class="my-2">
+                            <button class="btn btn-primary btn-block" style="width:100%;" [disabled]="!form.valid" >Login</button>
+                        </div>
+                        
+                        <div *ngIf="loginFailed" class="alert alert-danger">
+                            Email or Password Incorrect, Please try again
+                        </div>
+
+
+                            <!-- Register buttons -->
+                            <div class="text-center">
+                                <p>or sign up with:</p>
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
