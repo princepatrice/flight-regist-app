@@ -25,13 +25,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/mdbootstrap/css/mdb.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/mdbootstrap/js/mdb.min.js"
             ]
           },
           "configurations": {
@@ -98,13 +94,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/mdbootstrap/css/mdb.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/mdbootstrap/js/mdb.min.js"
             ]
           }
         }
